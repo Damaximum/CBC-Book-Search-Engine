@@ -48,16 +48,16 @@ const resolvers = {
       }
       throw new AuthenticationError("You must be lodded in!");
     },
-      deleteBook: async (parent, { bookId }) => {
-          if (context.user) {
-            const updatedUser = await User.findOneAndUpdate(
-                { _id: user._id },
-                { $pull: { savedBooks: { bookId: params.bookId } } },
-                { new: true }
-              );
-              return updatedUser
-          }
-          thrwo new AuthenticationError("You muse be logged in!")
+    deleteBook: async (parent, { bookId }) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: user._id },
+          { $pull: { savedBooks: { bookId: params.bookId } } },
+          { new: true }
+        );
+        return updatedUser;
+      }
+      throw new AuthenticationError("You muse be logged in!");
     },
   },
 };
