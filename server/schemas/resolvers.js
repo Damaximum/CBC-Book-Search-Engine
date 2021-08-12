@@ -48,7 +48,7 @@ const resolvers = {
       }
       throw new AuthenticationError("You must be lodded in!");
     },
-    deleteBook: async (parent, { bookId }) => {
+    removeBook: async (parent, { bookId }) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: user._id },
@@ -57,7 +57,7 @@ const resolvers = {
         );
         return updatedUser;
       }
-      throw new AuthenticationError("You muse be logged in!");
+      throw new AuthenticationError("You must be logged in!");
     },
   },
 };
