@@ -32,22 +32,30 @@ const resolvers = {
 
       return { token, user };
     },
+
     addUser: async (parent, { username, email, password }) => {
+      console.log(username, email, password);
       const user = await User.create({ username, email, password });
       const token = signToken(user);
       return { token, user };
     },
+
     saveBook: async (parent, { body }, context) => {
+      {
+        body;
+      }
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: user._id },
           { $addToSet: { savedBooks: body } },
           { new: true, runValidators: true }
         );
+        console.log(updatedUser);
         return updatedUser;
       }
       throw new AuthenticationError("You must be lodded in!");
     },
+
     removeBook: async (parent, { bookId }) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(

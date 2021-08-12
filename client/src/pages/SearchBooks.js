@@ -44,10 +44,6 @@ const SearchBooks = () => {
     try {
       const response = await searchGoogleBooks(searchInput);
 
-      if (!response.ok) {
-        throw new Error("something went wrong!");
-      }
-
       const { items } = await response.json();
 
       const bookData = items.map((book) => ({
@@ -82,6 +78,7 @@ const SearchBooks = () => {
         variables: { input: bookToSave },
       });
 
+      console.log(response);
       if (!response.ok) {
         throw new Error("something went wrong!");
       }
