@@ -27,7 +27,7 @@ In order to use this application, visit the [deployed application](https://cbc-b
 ## Screenshot
 
 Screenshot of the Book Search Engine:
-![React Portfolio](./screenshot/.png?raw=true "Book Search Engine Preview")
+![React Portfolio](./screenshots/booksearch.png?raw=true "Book Search Engine Preview")
 
 ## License
 
