@@ -21,7 +21,7 @@ This project uses Apollo and GraphQL to create a book search engine.
 ## Usage
 
 ​
-In order to use this application, visit the [deployed application]()
+In order to use this application, visit the [deployed application](https://cbc-book-search-engine.herokuapp.com/)
 ​
 
 ## Screenshot
