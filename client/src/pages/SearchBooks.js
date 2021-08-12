@@ -72,14 +72,15 @@ const SearchBooks = () => {
     if (!token) {
       return false;
     }
-
+    // console.log(bookToSave);
     try {
       const response = await saveBook({
-        variables: { input: bookToSave },
+        variables: {
+          input: bookToSave,
+        },
       });
 
-      console.log(response);
-      if (!response.ok) {
+      if (!response) {
         throw new Error("something went wrong!");
       }
 
